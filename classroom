@@ -1,0 +1,37 @@
+#!/bin/bash
+
+export USER && export UID
+
+usage() {
+  echo "Usage: ./classroom {build|up|down|shell|clean}"
+}
+
+build() {
+  docker-compose build app
+}
+
+shell() {
+  up
+  docker-compose exec app bash
+}
+
+up() {
+  docker-compose up -d 
+}
+
+down() {
+  docker-compose stop
+}
+
+clean() {
+  docker-compose down
+}
+
+case $1 in
+  build) build;;
+  shell) shell;;
+  up) up;;
+  down) down;;
+  clean) clean;;
+  *) usage;;
+esac
