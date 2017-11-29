@@ -1,8 +1,11 @@
 FROM debian:jessie
 
 RUN apt-get update && apt-get install -y \
+  build-essential \
   libpq-dev \
   sudo \
+  curl \
+  git \
   vim
 
 RUN curl -sL https://deb.nodesource.com/setup_9.x | bash - \
