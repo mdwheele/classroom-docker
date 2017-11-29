@@ -18,7 +18,7 @@ services:
     image: elasticsearch
     network_mode: host
 
-  app:
+  workspace:
     build:
       context: ..
       dockerfile: .docker/Dockerfile
