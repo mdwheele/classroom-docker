@@ -7,12 +7,12 @@ usage() {
 }
 
 build() {
-  docker-compose build app
+  docker-compose build workspace
 }
 
 shell() {
   up
-  docker-compose exec app bash
+  docker-compose exec workspace bash
 }
 
 up() {
